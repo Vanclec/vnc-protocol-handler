@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+; Mise en place d'un gestionnaire d'URL compatible avec UltraVNC sous Windows.
+; Voir : https://vanclercq.me/blog/permalink/12.html
+
+[HKEY_CLASSES_ROOT\vnc]
+"URL Protocol"=""
+@="URL:Virtual Network Computing"
+
+[HKEY_CLASSES_ROOT\vnc\shell]
+
+[HKEY_CLASSES_ROOT\vnc\shell\open]
+
+[HKEY_CLASSES_ROOT\vnc\shell\open\command]
+@="CMD /C START /MIN EXIT && \"C:\\Program Files\\uvnc bvba\\UltraVnc\\URLHelper.bat\" %1"
